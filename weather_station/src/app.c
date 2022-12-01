@@ -3,7 +3,7 @@
 
   \brief Anwendung SPS30 mit Funknetzwerk
 
-  \author Ana Erlenkötter, Code-Skeleton provided by Prof. Markus Krauße 
+  \author Ana ErlenkÃ¶tter, Code-Skeleton provided by Prof. Markus KrauÃŸe 
 
 ******************************************************************************/
 
@@ -85,12 +85,15 @@ static HAL_I2cDescriptor_t sps30readDescriptor={
 	.clockRate = I2C_CLOCK_RATE_62,
 	.id = SPS30_DEVICE_ADDRESS,
 	.lengthAddr = HAL_NO_INTERNAL_ADDRESS
-};static HAL_I2cDescriptor_t sps30writeDescriptor={ 
+}; 
+
+static HAL_I2cDescriptor_t sps30writeDescriptor={ 
 	.tty = TWI_CHANNEL_0,
 	.clockRate = I2C_CLOCK_RATE_62,
 	.id = SPS30_DEVICE_ADDRESS,
 	.lengthAddr = HAL_NO_INTERNAL_ADDRESS
-};
+};
+
 void APL_TaskHandler(void){
 	switch(appstate){ 
 		case APP_INIT_STATE:
@@ -383,7 +386,7 @@ void ZDO_StartNetworkConf(ZDO_StartNetworkConf_t *confirmInfo){
 		if(deviceType==DEV_TYPE_COORDINATOR){
 			appWriteDataToUsart((uint8_t*)"Coordinator\r\n", sizeof("Coordinator\r\n")-1);
 		}
-		BSP_OnLed(LED_YELLOW); //LED_GREEN für den Koordinator und LED_YELLOW für den Router und das Endgerät
+		BSP_OnLed(LED_YELLOW); //LED_GREEN fÃ¼r den Koordinator und LED_YELLOW fÃ¼r den Router und das EndgerÃ¤t
 		}else{
 		appWriteDataToUsart((uint8_t*)"Error\r\n",sizeof("Error\r\n")-1);
 	}
